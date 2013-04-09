@@ -24,8 +24,9 @@ namespace Innlevering2
 
         public Character(Point position)
         {
-            //Set the width and height in the child class FIKS NEDENFOR!!!!!!!!!!!!
-            _characterBox = new Rectangle(position.X, 100, 0, 0);
+            //Set the width and height in the child class FIKS NEDENFOR!!!!!!!!!!!! 
+            //100 nedenfor representerer Y-aksen, vi vil vel ha en start position som er i midten.
+            _characterBox = new Rectangle(position.X, position.Y, 0, 0);
         }
         /// <summary>
         /// A virtual function can be overridden using the override keyword.
