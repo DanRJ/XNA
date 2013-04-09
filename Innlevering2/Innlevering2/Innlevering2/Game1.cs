@@ -49,7 +49,7 @@ namespace Innlevering2
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            _spriteSheet = Content.Load<Texture2D>("spritesheet");
+            _spriteSheet = Content.Load<Texture2D>("spritesheettest1");
             _player.SetTextureSheet(_spriteSheet);
             // TODO: use this.Content to load your game content here
         }

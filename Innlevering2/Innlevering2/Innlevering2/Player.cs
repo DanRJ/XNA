@@ -20,7 +20,7 @@ namespace Innlevering2
         private int _spriteHeight = 117;
         private float _animationStepTime;
         private float _animationTimer;
-        private int _currentDirection; // 0: right, 1: idle, 2: jump, 3: left
+        private int _currentDirection; // 0: right, 1: left, 2: jump, 3: left
         private int _animationCounter;
 
         public Player(Point position)
@@ -52,7 +52,7 @@ namespace Innlevering2
             {
                 //the A-key moves character to the left
                 _characterBox.X -= movementSpeed;
-                _currentDirection = 3;
+                _currentDirection = 1;
                 _animationTimer += deltaTime;
             }
             else if (_currentKeyboardState.IsKeyDown(Keys.Space))
