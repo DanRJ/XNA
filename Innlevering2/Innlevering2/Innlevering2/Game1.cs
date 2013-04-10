@@ -20,6 +20,7 @@ namespace Innlevering2
         SpriteBatch spriteBatch;
         private Texture2D _spriteSheet;
         private Player _player;
+        Level01 level01;
 
         public Game1()
         {
@@ -51,6 +52,7 @@ namespace Innlevering2
             spriteBatch = new SpriteBatch(GraphicsDevice);
             _spriteSheet = Content.Load<Texture2D>("spritesheettest1");
             _player.SetTextureSheet(_spriteSheet);
+            level01 = new Level01(GraphicsDevice);
             // TODO: use this.Content to load your game content here
         }
 
@@ -73,6 +75,11 @@ namespace Innlevering2
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            KeyboardState buttons = Keyboard.GetState();
+            if (buttons.IsKeyDown(Keys.Escape))
+            {
+                this.Exit();
+            }
 
             _player.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
@@ -90,6 +97,7 @@ namespace Innlevering2
             GraphicsDevice.Clear(Color.White);
             spriteBatch.Begin();
             _player.Draw(spriteBatch);
+            level01.Draw(spriteBatch);
             spriteBatch.End();
 
             // TODO: Add your drawing code here
